@@ -1,0 +1,136 @@
+/* === Reset y base === */
+body {
+  background: linear-gradient(to bottom, #121212, #1a1a1a); /* fondo suave */
+  color: #e0e0e0;
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+}
+
+/* === Header === */
+header {
+  background-color: #1f1f1f;
+  padding: 16px;
+  text-align: center;
+  border-bottom: 1px solid #333;
+}
+
+header h1 {
+  margin: 0;
+  font-size: 2.5em;
+  color: #facc15;
+}
+
+nav {
+  margin-top: 10px;
+}
+
+nav a {
+  color: #facc15;
+  text-decoration: none;
+  margin: 0 10px;
+  font-weight: bold;
+}
+
+nav a:hover {
+  text-decoration: underline;
+}
+
+/* === Loader === */
+#loader {
+  text-align: center;
+  padding: 20px;
+  font-size: 1.2em;
+  color: #facc15;
+}
+
+/* === Contenedor de películas === */
+#peliculas-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 30px;
+  padding: 20px;
+  justify-content: center;
+  justify-items: center;
+}
+
+/* === Tarjetas de películas === */
+.tarjeta {
+  width: 200px;
+  border: 2px solid #333;
+  border-radius: 8px;
+  padding: 10px;
+  background-color: #ffffff;
+  color: #000000;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+  text-align: center;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.tarjeta:hover {
+  transform: translateY(-10px) scale(1.05);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+}
+
+/* === Historia del cine (estructura Bootstrap) === */
+.container {
+  padding: 20px;
+}
+
+h2 {
+  color: #facc15;
+  font-size: 1.8em;
+  margin-bottom: 10px;
+}
+
+p {
+  line-height: 1.6;
+  margin-bottom: 15px;
+}
+
+/* === Imágenes en historia === */
+img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 8px;
+}
+body {
+  padding-bottom: 60px; /* espacio para evitar que el contenido se pegue abajo */
+}
+
+.container:last-of-type {
+  margin-bottom: 40px;
+}
+/* === Barra de navegación === */
+nav {
+  background-color: #facc15; /* dorado vibrante */
+  padding: 12px 0;
+  text-align: center;
+}
+
+nav a {
+  color: #121212;
+  text-decoration: none;
+  margin: 0 15px;
+  font-weight: bold;
+  font-size: 1.1em;
+  transition: color 0.3s ease;
+}
+
+nav a:hover {
+  color: #ffffff;
+  text-decoration: underline;
+}
+
+/* === Separación final para evitar mezcla con fondo === */
+.container:last-of-type {
+  margin-bottom: 60px;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+  margin-bottom: 20px;
+}
