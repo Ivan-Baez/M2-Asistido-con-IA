@@ -4,7 +4,7 @@ Este repositorio contiene la versión **modificada y asistida con Inteligencia A
 El objetivo es mostrar cómo el uso de agentes y técnicas de IA puede optimizar el desarrollo, la organización y la revisión del código.
 
 ## 🚀 Tecnologías utilizadas
-- **Backend**: Express 5, Mongoose 8, MongoDB, dotenv, cors, morgan
+- **Backend**: Express 5, Mongoose 8,dotenv, cors, morgan
 - **Base de datos:** MongoDB  
 - **Frontend:** Next.js  
 - **Control de versiones:** Git/GitHub  
