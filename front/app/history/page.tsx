@@ -163,3 +163,16 @@ export const HISTORY_SECTIONS = [
       'La historia del cine continúa escribiéndose con cada nueva tecnología y cada nueva forma de contar historias.',
   },
 ];
+
+export default function HistoryPage() {
+  return (
+    <div>
+      {HISTORY_SECTIONS.map(section => (
+        <div key={section.id}>
+          <h2>{section.title}</h2>
+          <p>{section.subtitle}</p>
+        </div>
+      ))}
+    </div>
+  );
+}
