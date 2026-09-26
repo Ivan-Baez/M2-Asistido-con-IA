@@ -73,6 +73,42 @@ nav a:hover {
   box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
 }
 
+.genre-tag {
+  display: inline-block;
+  background-color: #facc15;
+  color: #121212;
+  padding: 2px 8px;
+  border-radius: 12px;
+  font-size: 0.75em;
+  font-weight: bold;
+  margin: 2px;
+}
+
+.genre-tag.action { background-color: #e53935; color: #fff; }
+.genre-tag.adventure { background-color: #fb8c00; color: #fff; }
+.genre-tag.comedy { background-color: #fdd835; color: #121212; }
+.genre-tag.fantasy { background-color: #1e88e5; color: #fff; }
+.genre-tag.sci-fi { background-color: #8e24aa; color: #fff; }
+.genre-tag.drama { background-color: #d81b60; color: #fff; }
+.genre-tag.horror { background-color: #1b1b1b; color: #fff; }
+.genre-tag.thriller { background-color: #c62828; color: #fff; }
+.genre-tag.romance { background-color: #ec407a; color: #fff; }
+.genre-tag.animation { background-color: #43a047; color: #fff; }
+.genre-tag.mystery { background-color: #5c6bc0; color: #fff; }
+.genre-tag.crime { background-color: #37474f; color: #fff; }
+.genre-tag.documentary { background-color: #00897b; color: #fff; }
+.genre-tag.family { background-color: #f06292; color: #fff; }
+.genre-tag.music { background-color: #ab47bc; color: #fff; }
+.genre-tag.war { background-color: #5d4037; color: #fff; }
+.genre-tag.western { background-color: #bf360c; color: #fff; }
+.genre-tag.history { background-color: #3e2723; color: #fff; }
+.genre-tag.biography { background-color: #455a64; color: #fff; }
+.genre-tag.musical { background-color: #c2185b; color: #fff; }
+
+.tarjeta p {
+  margin: 8px 0;
+}
+
 /* === Historia del cine (estructura Bootstrap) === */
 .container {
   padding: 20px;

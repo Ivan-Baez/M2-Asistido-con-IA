@@ -1,22 +1,27 @@
 {
   "name": "back",
   "version": "1.0.0",
-  "description": "",
+  "description": "Backend Express + MongoDB para M2-Asistido-con-IA",
   "main": "index.js",
   "scripts": {
-    "start": "nodemon index.js"
+    "start": "node index.js",
+    "start:prod": "node index.js",
+    "build": "echo 'No build step for Express'",
+    "_comment_dev_start": "Para desarrollo local usar: nodemon index.js"
   },
   "keywords": [],
-  "author": "",
+  "author": "Ivan Báez",
   "license": "ISC",
   "dependencies": {
     "cors": "^2.8.5",
     "dotenv": "^17.2.2",
     "express": "^5.1.0",
     "mongoose": "^8.18.2",
-    "morgan": "^1.10.1"
+    "morgan": "^1.10.1",
+    "openai": "^7.5.0"
   },
   "devDependencies": {
+    "_comment_nodemon": "Solo para desarrollo local, Render no lo usa",
     "nodemon": "^3.1.10"
   }
 }

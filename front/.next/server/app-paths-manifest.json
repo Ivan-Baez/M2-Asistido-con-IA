@@ -1,0 +1,6 @@
+{
+  "/historiacine/page": "app/historiacine/page.js",
+  "/newMovie/page": "app/newMovie/page.js",
+  "/sobreproyecto/page": "app/sobreproyecto/page.js",
+  "/page": "app/page.js"
+}
