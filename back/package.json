@@ -6,8 +6,7 @@
   "scripts": {
     "start": "node index.js",
     "start:prod": "node index.js",
-    "build": "echo 'No build step for Express'",
-    "_comment_dev_start": "Para desarrollo local usar: nodemon index.js"
+    "build": "echo 'No build step for Express'"
   },
   "keywords": [],
   "author": "Ivan Báez",
@@ -21,7 +20,6 @@
     "openai": "^7.5.0"
   },
   "devDependencies": {
-    "_comment_nodemon": "Solo para desarrollo local, Render no lo usa",
     "nodemon": "^3.1.10"
   }
 }
