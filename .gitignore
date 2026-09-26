@@ -1,1 +1,41 @@
+# Node
 node_modules
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Backend
+back/.env
+.env
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+
+# Logs
+*.log
+logs
+*.pid
+*.seed
+*.pid.lock
+
+# Build / producción
+build
+dist
+.out
+.next
+
+# Coverage / testing
+coverage
+*.lcov
+
+# Cache
+.cache
+.tmp
+
+# Editor / sistema
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
+*.swp
