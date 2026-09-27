@@ -11,7 +11,10 @@ const app = express();
 app.use(cors({
   origin: "https://m2-asistido-con-ia-1.onrender.com",
   methods: ["GET", "POST", "PUT", "DELETE"],
+  credentials: true,
+  allowedHeaders: ["Content-Type", "Authorization"]
 }));
+
 
 app.use(morgan("dev"));
 app.use(express.json());
