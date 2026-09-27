@@ -1,7 +1,8 @@
 'use client';
 
 import { useState, useEffect, useRef } from 'react';
-import { HISTORY_SECTIONS } from '../history/page';
+import { HISTORY_SECTIONS } from '../history/constants';
+
 
 export default function HistoriaCinePage() {
   const [visibleSections, setVisibleSections] = useState<Set<string>>(
