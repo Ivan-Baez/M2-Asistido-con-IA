@@ -9,7 +9,8 @@ const app = express();
 
 // CORS primero
 app.use(cors({
-  origin: "https://m2-asistido-con-ia-1.onrender.com",
+  origin:[ "https://m2-asistido-con-ia-1.onrender.com",
+           "https://m2-asistido-con-ia.onrender.com"],
   methods: ["GET", "POST", "PUT", "DELETE"],
   credentials: true,
   allowedHeaders: ["Content-Type", "Authorization"]
