@@ -60,14 +60,33 @@ function formatRecommendations(movies) {
 
 function buildUserContext(userMovies = []) {
   if (!Array.isArray(userMovies) || !userMovies.length) return '';
+  
   const total = userMovies.length;
   const avgRate = (userMovies.reduce((a, b) => a + b.rate, 0) / total).toFixed(1);
   const genres = {};
-  userMovies.forEach(m => m.genre.forEach(g => genres[g] = (genres[g] || 0) + 1));
-  const topGenres = Object.entries(genres).sort((a,b) => b[1]-a[1]).slice(0, 3).map(([g,c]) => `${g} (${c})`).join(', ');
-  const topRated = [...userMovies].sort((a,b) => b.rate - a.rate).slice(0, 3).map(m => `${m.title} (${m.year}) ⭐${m.rate}`).join('; ');
+
+  // ✅ Validación para evitar errores si genre no existe o no es array
+  userMovies.forEach(m => {
+    if (Array.isArray(m.genre)) {
+      m.genre.forEach(g => genres[g] = (genres[g] || 0) + 1);
+    }
+  });
+
+  const topGenres = Object.entries(genres)
+    .sort((a, b) => b[1] - a[1])
+    .slice(0, 3)
+    .map(([g, c]) => `${g} (${c})`)
+    .join(', ');
+
+  const topRated = [...userMovies]
+    .sort((a, b) => b.rate - a.rate)
+    .slice(0, 3)
+    .map(m => `${m.title} (${m.year}) ⭐${m.rate}`)
+    .join('; ');
+
   return `\n\n[CONTEXTO CATÁLOGO USUARIO: ${total} películas | Promedio: ${avgRate}/10 | Géneros top: ${topGenres} | Mejor valoradas: ${topRated}]`;
 }
+
 
 async function callLLM(userMessage, userMovies = [], conversationHistory = []) {
   if (!Array.isArray(userMovies)) userMovies = [];
