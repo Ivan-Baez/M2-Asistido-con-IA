@@ -1,3 +1,4 @@
+// app.js
 const express = require("express");
 const moviesRouter = require("./routes/moviesRouter");
 const chatbotRouter = require("./routes/chatbotRouter");
@@ -7,8 +8,15 @@ const morgan = require("morgan");
 
 const app = express();
 
-// ✅ Configuración de CORS (por ahora abierto para pruebas)
-app.use(cors());
+// ✅ Configuración de CORS
+app.use(cors({
+  origin: [
+    "https://m2-asistido-con-ia-1.onrender.com", // frontend en Render
+    "http://localhost:3000" // frontend local (dev)
+  ],
+  methods: ["GET", "POST", "PUT", "DELETE"],
+  credentials: true
+}));
 
 // ✅ Middlewares
 app.use(morgan("dev"));
@@ -25,3 +33,4 @@ app.use("/api", chatbotRouter);
 app.use("/api", assistantRouter);
 
 module.exports = app;
+

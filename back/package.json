@@ -4,7 +4,8 @@
   "description": "Backend Express + MongoDB para M2-Asistido-con-IA",
   "main": "index.js",
   "scripts": {
-    "start": "node index.js",
+    "start": "node index.js",       
+    "dev": "nodemon index.js",      
     "start:prod": "node index.js",
     "build": "echo 'No build step for Express'"
   },
