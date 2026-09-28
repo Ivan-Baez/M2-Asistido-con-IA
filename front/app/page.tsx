@@ -21,11 +21,13 @@ export default function HomePage() {
   const [deletingId, setDeletingId] = useState<string | null>(null);
   const { showToast } = useToast();
 
+  const API_URL = process.env.NEXT_PUBLIC_API_URL;
+
   const fetchMovies = useCallback(async () => {
-    try {
-      const res = await fetch('http://localhost:3001/movies', {
-        cache: 'no-store',
-      });
+   try {
+    const res = await fetch(`${API_URL}/movies`, {
+      cache: 'no-store',
+    });
 
       if (!res.ok) {
         throw new Error('Error al cargar películas');
@@ -58,7 +60,7 @@ export default function HomePage() {
 
     try {
       const res = await fetch(
-        `http://localhost:3001/movies/${id}`,
+       `${API_URL}/movies/${id}`, 
         {
           method: 'DELETE',
         }

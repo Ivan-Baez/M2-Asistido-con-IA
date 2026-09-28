@@ -1,6 +1,4 @@
 {
   "/page": "app/page.js",
-  "/historiacine/page": "app/historiacine/page.js",
-  "/newMovie/page": "app/newMovie/page.js",
-  "/sobreproyecto/page": "app/sobreproyecto/page.js"
+  "/newMovie/page": "app/newMovie/page.js"
 }
