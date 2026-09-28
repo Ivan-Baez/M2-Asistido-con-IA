@@ -105,14 +105,17 @@ function getFallbackResponse(userMessage, userMovies = []) {
 async function processMessage(userMessage, userMovies = [], conversationHistory = []) {
   if (!Array.isArray(userMovies)) userMovies = [];
   if (!Array.isArray(conversationHistory)) conversationHistory = [];
+
   const lower = userMessage.toLowerCase().trim();
   if (!lower) {
     return { response: 'No recibí ningún mensaje. ¿En qué te ayudo? 😊', movies: [], state: 'idle' };
   }
+
   const wantsRecommendation = /recomienda|recomendación|sugiere|que ver|qué ver|busco|buscar|pelicula|película|ver algo|similar a|parecida a|basada en|tipo/.test(lower);
   let movies = [];
   let state = 'idle';
   let response = '';
+
   if (wantsRecommendation) {
     state = 'thinking';
     const preferences = parsePreferences(userMessage);
@@ -122,13 +125,16 @@ async function processMessage(userMessage, userMovies = [], conversationHistory 
   } else {
     state = 'thinking';
     response = await callLLM(userMessage, userMovies, conversationHistory);
+
     if (typeof response === 'object' && response.needsRecommendation) {
       const preferences = parsePreferences(response.lower);
       movies = await getRecommendationsFromDB(preferences);
       response = formatRecommendations(movies);
     }
+
     state = 'speaking';
   }
+
   // Catálogo del usuario
   if (userMovies.length > 0 && /mi catalogo|mi catálogo|mis peliculas|mis películas|tengo|mi colección|favorita|mejor valorada|peor/.test(lower)) {
     if (/mejor valorada|mejor puntuada|top|favorita|la mejor/.test(lower)) {
@@ -141,13 +147,21 @@ async function processMessage(userMessage, userMovies = [], conversationHistory 
       response += `\n\n📊 **Tu catálogo:** ${userMovies.length} película${userMovies.length !== 1 ? 's' : ''} total.`;
     } else if (/genero|género/.test(lower)) {
       const genres = {};
-      userMovies.forEach(m => m.genre.forEach(g => genres[g] = (genres[g] || 0) + 1));
+      userMovies.forEach(m => {
+        if (Array.isArray(m.genre)) {
+          m.genre.forEach(g => genres[g] = (genres[g] || 0) + 1);
+        }
+      });
       const topGenre = Object.entries(genres).sort((a,b) => b[1]-a[1])[0];
-      response += `\n\n🎭 **Tu género favorito:** ${topGenre[0]} (${topGenre[1]} película${topGenre[1] !== 1 ? 's' : ''})`;
+      if (topGenre) {
+        response += `\n\n🎭 **Tu género favorito:** ${topGenre[0]} (${topGenre[1]} película${topGenre[1] !== 1 ? 's' : ''})`;
+      }
     }
   }
+
   return { response, movies, state };
 }
+
 
 module.exports = {
   processMessage,
