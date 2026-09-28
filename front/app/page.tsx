@@ -21,7 +21,11 @@ export default function HomePage() {
   const [deletingId, setDeletingId] = useState<string | null>(null);
   const { showToast } = useToast();
 
+
   const API_URL = process.env.NEXT_PUBLIC_API_URL;
+
+  console.log("API_URL:", API_URL);
+
 
   const fetchMovies = useCallback(async () => {
    try {
