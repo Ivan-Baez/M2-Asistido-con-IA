@@ -34,7 +34,7 @@ export default function Chatbot() {
 
   const fetchMovies = useCallback(async () => {
     try {
-      const res = await fetch('http://localhost:3001/movies', { cache: 'no-store' });
+      const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/movies`, { cache: 'no-store' });
       if (res.ok) {
         const data = await res.json();
         setUserMovies(data);
@@ -76,7 +76,7 @@ export default function Chatbot() {
   addMessage('user', userMessage);
 
   try {
-    const res = await fetch('https://m2-asistido-con-ia.onrender.com/api/assistant', {
+    const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/api/assistant`, {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({ message: userMessage })
