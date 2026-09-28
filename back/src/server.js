@@ -7,20 +7,17 @@ const morgan = require("morgan");
 
 const app = express();
 
-// ✅ Configuración de CORS primero
-app.use(cors({
-  origin: [
-    "https://m2-asistido-con-ia-1.onrender.com", // dominio frontend
-    "https://m2-asistido-con-ia.onrender.com"    // dominio backend
-  ],
-  methods: ["GET", "POST", "PUT", "DELETE"],
-  credentials: true,
-  allowedHeaders: ["Content-Type", "Authorization"]
-}));
+// ✅ Configuración de CORS (por ahora abierto para pruebas)
+app.use(cors());
 
 // ✅ Middlewares
 app.use(morgan("dev"));
 app.use(express.json());
+
+// ✅ Ruta raíz para verificar que el servidor responde
+app.get("/", (req, res) => {
+  res.send("Servidor funcionando correctamente 🚀");
+});
 
 // ✅ Rutas
 app.use(moviesRouter);
