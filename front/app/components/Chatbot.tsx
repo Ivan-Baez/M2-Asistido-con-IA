@@ -68,32 +68,33 @@ export default function Chatbot() {
   };
 
   const sendMessage = async () => {
-    if (!input.trim() || isLoading) return;
+  if (!input.trim() || isLoading) return;
 
-    const userMessage = input.trim();
-    setInput('');
-    setIsLoading(true);
-    addMessage('user', userMessage);
+  const userMessage = input.trim();
+  setInput('');
+  setIsLoading(true);
+  addMessage('user', userMessage);
 
-    try {
-      const res = await fetch('http://localhost:3001/api/chat', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ message: userMessage })
-      });
+  try {
+    const res = await fetch('https://m2-asistido-con-ia.onrender.com/api/assistant', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ message: userMessage })
+    });
 
-      if (!res.ok) throw new Error('Error en el servidor');
+    if (!res.ok) throw new Error('Error en el servidor');
 
-      const data = await res.json();
-      addMessage('assistant', data.response, data.movies);
-    } catch (error) {
-      console.error('Chatbot error:', error);
-      addMessage('assistant', 'Lo siento, hubo un error de conexión. ¿Intentamos de nuevo?');
-      showToast('error', 'Error conectando con el chatbot');
-    } finally {
-      setIsLoading(false);
-    }
-  };
+    const data = await res.json();
+    addMessage('assistant', data.response, data.movies);
+  } catch (error) {
+    console.error('Chatbot error:', error);
+    addMessage('assistant', 'Lo siento, hubo un error de conexión. ¿Intentamos de nuevo?');
+    showToast('error', 'Error conectando con el chatbot');
+  } finally {
+    setIsLoading(false);
+  }
+};
+
 
   const handleKeyDown = (e: React.KeyboardEvent) => {
     if (e.key === 'Enter' && !e.shiftKey) {
