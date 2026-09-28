@@ -167,7 +167,7 @@ export default function NewMoviePage() {
       };
 
       const response = await fetch(
-        'http://localhost:3001/movies',
+        `${process.env.NEXT_PUBLIC_API_URL}/movies`,
         {
           method: 'POST',
           headers: {
