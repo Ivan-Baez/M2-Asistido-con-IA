@@ -153,7 +153,7 @@ export default function LumiereAssistant() {
     const history = messages.slice(-6).map(m => ({ role: m.role, content: m.content }));
 
     try {
-      const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/assistant`, {
+      const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/api/assistant`, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ message: userMessage, history, userMovies })
