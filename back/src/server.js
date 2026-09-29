@@ -11,10 +11,11 @@ const app = express();
 // ✅ Configuración de CORS
 app.use(cors({
   origin: [
-    "https://m2-asistido-con-ia-1.onrender.com", // frontend en Render
-    "http://localhost:3000" // frontend local (dev)
+    'https://m2-asistido-con-ia.onrender.com',   // dominio backend en Render
+    'https://m2-asistido-con-ia-1.onrender.com', // dominio frontend en Render
+    'http://localhost:3000'                      // frontend local (dev)
   ],
-  methods: ["GET", "POST", "PUT", "DELETE"],
+  methods: ['GET', 'POST', 'PUT', 'DELETE'],
   credentials: true
 }));
 

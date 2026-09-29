@@ -8,16 +8,7 @@ const cors = require('cors');
 const app = require("./src/server");
 const connectDB = require("./src/config/conDb");
 
-// ✅ Configuración de CORS
-app.use(cors({
-  origin: [
-    'https://m2-asistido-con-ia.onrender.com',   // dominio backend en Render
-    'https://m2-asistido-con-ia-1.onrender.com', // dominio frontend en Render
-    'http://localhost:3000'                      // frontend local (dev)
-  ],
-  methods: ['GET', 'POST', 'PUT', 'DELETE'],
-  credentials: true
-}));
+
 
 // ✅ Puerto: Render asigna automáticamente, en local usamos 3001
 const PORT = process.env.PORT || 3001;
