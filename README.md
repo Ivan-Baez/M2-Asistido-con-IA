@@ -1,3 +1,9 @@
+## 🎬 Demo del proyecto
+
+<video width="640" height="360" controls autoplay loop>
+  <source src="./assets/AppCine -Antes y Despues.mp4" type="video/mp4">
+  Tu navegador no soporta la reproducción de video.
+</video>
 
 # 🎬 Proyecto M2-Asistido-con-IA
 <img width="1113" height="633" alt="Captura de pantalla 2026-09-29 231914" src="https://github.com/user-attachments/assets/7294ff79-cd49-4dbe-b402-fb88adf622c2" />
