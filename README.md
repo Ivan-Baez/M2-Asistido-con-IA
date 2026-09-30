@@ -1,4 +1,8 @@
+
 # 🎬 Proyecto M2-Asistido-con-IA
+<img width="1113" height="633" alt="Captura de pantalla 2026-09-29 231914" src="https://github.com/user-attachments/assets/7294ff79-cd49-4dbe-b402-fb88adf622c2" />
+<img width="941" height="632" alt="Captura de pantalla 2026-09-29 222949" src="https://github.com/user-attachments/assets/0912dfb7-fd05-457c-90e8-c3835c96d0f9" />
+<img width="901" height="632" alt="Captura de pantalla 2026-09-29 222915" src="https://github.com/user-attachments/assets/c538871b-7028-448a-bb67-1e790b36f0c3" />
 
 Este repositorio contiene la versión **modificada y asistida con Inteligencia Artificial** del proyecto M2Cinema.  
 El objetivo es mostrar cómo el uso de agentes y técnicas de IA puede optimizar el desarrollo, la organización y la revisión del código.
